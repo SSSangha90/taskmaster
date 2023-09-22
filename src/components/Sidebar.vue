@@ -3,7 +3,12 @@
     <h1>Task List</h1>
     <input type="search" />
     <div class="menu">
-      <div class="menu-option" v-for="item in data" :key="item.id">
+      <div
+        class="menu-option"
+        v-for="item in data"
+        :key="item.id"
+        @click="selected(item.id)"
+      >
         <h4>{{ item.name }}</h4>
         <p>{{ item.subHeading }}</p>
       </div>
@@ -16,6 +21,11 @@ import TASK_COLLECTION from "../../backend/mocks/tasksCollection";
 
 const tasks = TASK_COLLECTION.tasks;
 
+const selected = (id) => {
+  console.log(id);
+  return id;
+};
+
 export default {
   name: "SideBar",
   props: {},
@@ -23,6 +33,9 @@ export default {
     return {
       data: tasks,
     };
+  },
+  methods: {
+    selected,
   },
 };
 </script>
