@@ -3,21 +3,9 @@
     <h1>Task List</h1>
     <input type="search" />
     <div class="menu">
-      <div class="menu-option">
-        <h4>Onboarding introduction</h4>
-        <p>A brief introduction to the tasks required.</p>
-      </div>
-      <div class="menu-option">
-        <h4>Indentity Validation</h4>
-        <p>Provide valid photo identification</p>
-      </div>
-      <div class="menu-option">
-        <h4>Address Validation</h4>
-        <p>Provide vald proof of address</p>
-      </div>
-      <div class="menu-option">
-        <h4>Financial Records</h4>
-        <p>Provide details of financial transactions</p>
+      <div class="menu-option" v-for="item in data" :key="item.id">
+        <h4>{{ item.name }}</h4>
+        <p>{{ item.subHeading }}</p>
       </div>
     </div>
   </div>
@@ -27,11 +15,15 @@
 import TASK_COLLECTION from "../../backend/mocks/tasksCollection";
 
 const tasks = TASK_COLLECTION.tasks;
-console.log(tasks);
 
 export default {
   name: "SideBar",
   props: {},
+  data() {
+    return {
+      data: tasks,
+    };
+  },
 };
 </script>
 
