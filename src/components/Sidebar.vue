@@ -5,7 +5,7 @@
     <div class="menu">
       <div class="menu-option">
         <h4>Onboarding introduction</h4>
-        <p>A bref introduction to the tasks required.</p>
+        <p>A brief introduction to the tasks required.</p>
       </div>
       <div class="menu-option">
         <h4>Indentity Validation</h4>
@@ -24,6 +24,11 @@
 </template>
 
 <script>
+import TASK_COLLECTION from "../../backend/mocks/tasksCollection";
+
+const tasks = TASK_COLLECTION.tasks;
+console.log(tasks);
+
 export default {
   name: "SideBar",
   props: {},
