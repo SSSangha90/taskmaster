@@ -1,0 +1,78 @@
+<template>
+  <div class="sidebar">
+    <h1>Task List</h1>
+    <input type="search" />
+    <div class="menu">
+      <div class="menu-option">
+        <h4>Onboarding introduction</h4>
+        <p>A bref introduction to the tasks required.</p>
+      </div>
+      <div class="menu-option">
+        <h4>Indentity Validation</h4>
+        <p>Provide valid photo identification</p>
+      </div>
+      <div class="menu-option">
+        <h4>Address Validation</h4>
+        <p>Provide vald proof of address</p>
+      </div>
+      <div class="menu-option">
+        <h4>Financial Records</h4>
+        <p>Provide details of financial transactions</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "SideBar",
+  props: {},
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+.sidebar {
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  width: 30%;
+  border-right: 0.5px solid #000;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+  margin-left: 2rem;
+}
+
+.menu-option {
+  border-bottom: 1px solid grey;
+  margin: 0 1.5rem 0 0;
+  cursor: pointer;
+}
+
+.menu-option:hover {
+  background-color: rgba(144, 214, 232, 0.2);
+}
+
+h1 {
+  text-align: left;
+  margin-left: 1.5rem;
+}
+
+h4 {
+  margin-bottom: 0.25rem;
+}
+
+p {
+  margin-top: 0.25rem;
+}
+
+input {
+  width: 90%;
+  padding: 0.5rem;
+}
+</style>
