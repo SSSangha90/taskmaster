@@ -1,16 +1,17 @@
 <template>
-  <div>
-    <SideBar />
-  </div>
+  <HeaderComponent />
+  <SideBar />
 </template>
 
 <script>
 import SideBar from "./components/Sidebar";
+import HeaderComponent from "./components/Header.vue";
 
 export default {
   name: "App",
   components: {
     SideBar,
+    HeaderComponent,
   },
 };
 </script>
