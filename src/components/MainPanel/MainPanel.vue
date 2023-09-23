@@ -6,13 +6,19 @@
     <div v-if="id === 2">
       <IdentityValidation />
     </div>
-    <div v-if="id === 3">Address</div>
-    <div v-if="id === 4">Finance</div>
+    <div v-if="id === 3">
+      <AddressValidation />
+    </div>
+    <div v-if="id === 4">
+      <FinancialRecords />
+    </div>
   </div>
 </template>
 <script>
 import OnBoarding from "./components/Onboarding.vue";
 import IdentityValidation from "./components/IdentityValidation.vue";
+import AddressValidation from "./components/AddressValidation.vue";
+import FinancialRecords from "./components/FinancialRecords.vue";
 
 export default {
   name: "MainPanel",
@@ -22,7 +28,12 @@ export default {
   data() {},
   methods: {},
   computed: {},
-  components: { OnBoarding, IdentityValidation },
+  components: {
+    OnBoarding,
+    IdentityValidation,
+    AddressValidation,
+    FinancialRecords,
+  },
 };
 </script>
 
@@ -36,5 +47,25 @@ export default {
 
 p {
   margin: 2rem 0;
+}
+
+form {
+  border: 1px solid #000;
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  width: 16rem;
 }
 </style>

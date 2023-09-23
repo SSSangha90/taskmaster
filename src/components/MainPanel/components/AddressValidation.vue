@@ -1,7 +1,7 @@
 <template>
-  <div class="identity-validation">
+  <div class="address-validation">
     <div>
-      <h2>Identity Validation</h2>
+      <h2>Address Validation</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -16,19 +16,23 @@
       </p>
       <form>
         <div>
-          <Label>First Name</Label>
+          <Label>Address Line 1</Label>
           <Input type="text" />
         </div>
         <div>
-          <Label>Middle Name</Label>
+          <Label>Address Line 2</Label>
           <Input type="text" />
         </div>
         <div>
-          <Label>Last Name</Label>
+          <Label>City</Label>
           <Input type="text" />
         </div>
         <div>
-          <Label>Identity Document</Label>
+          <Label>County</Label>
+          <Input type="text" />
+        </div>
+        <div>
+          <Label>Proof of Address</Label>
           <Input type="file" />
         </div>
       </form>
@@ -38,6 +42,6 @@
 
 <script>
 export default {
-  name: "IdentityValidaton",
+  name: "AddressValidaton",
 };
 </script>
