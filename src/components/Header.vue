@@ -1,27 +1,26 @@
 <template>
-  <header>
-    <h3>Max Comply</h3>
-  </header>
+  <header><img src="../../assets/logo.png" /></header>
 </template>
 
 <script>
+import logo from "../../assets/logo.png";
 export default {
   name: "HeaderComponent",
+  components: logo,
 };
 </script>
 
 <style scoped>
 header {
   height: 5rem;
-  background-color: blue;
+  background-color: #003da0;
 }
 
-h3 {
-  font-size: 2rem;
-  color: #fff;
-  margin: 0;
+img {
+  width: 8rem;
+  height: auto;
   position: absolute;
   left: 1rem;
-  top: 1.5rem;
+  top: 0.25rem;
 }
 </style>
