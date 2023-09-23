@@ -1,11 +1,11 @@
 <template>
   <div class="sidebar">
     <h1>Task List</h1>
-    <input type="search" />
+    <input v-model="search" type="text" />
     <div class="menu">
       <div
         class="menu-option"
-        v-for="item in data"
+        v-for="item in filteredTasks"
         :key="item.id"
         @click="selected(item.id)"
       >
@@ -19,6 +19,7 @@
 <script>
 import TASK_COLLECTION from "../../backend/mocks/tasksCollection";
 
+// `GET /tasks` endpoint on intial load
 const tasks = TASK_COLLECTION.tasks;
 
 const selected = (id) => {
@@ -31,11 +32,19 @@ export default {
   props: {},
   data() {
     return {
-      data: tasks,
+      tasks: tasks,
+      search: "",
     };
   },
   methods: {
     selected,
+  },
+  computed: {
+    filteredTasks() {
+      return this.tasks.filter((task) => {
+        return task.name.toLowerCase().includes(this.search.toLowerCase());
+      });
+    },
   },
 };
 </script>
