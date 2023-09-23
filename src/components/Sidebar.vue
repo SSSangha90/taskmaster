@@ -14,18 +14,15 @@
       </div>
     </div>
   </div>
+  <MainPanel :id="id" />
 </template>
 
 <script>
 import TASK_COLLECTION from "../../backend/mocks/tasksCollection";
+import MainPanel from "./MainPanel.vue";
 
 // `GET /tasks` endpoint on intial load
 const tasks = TASK_COLLECTION.tasks;
-
-const selected = (id) => {
-  console.log(id);
-  return id;
-};
 
 export default {
   name: "SideBar",
@@ -34,10 +31,14 @@ export default {
     return {
       tasks: tasks,
       search: "",
+      id: 1,
     };
   },
   methods: {
-    selected,
+    // Get Task by ID
+    selected: function (id) {
+      this.id = id;
+    },
   },
   computed: {
     filteredTasks() {
@@ -46,6 +47,7 @@ export default {
       });
     },
   },
+  components: { MainPanel },
 };
 </script>
 
