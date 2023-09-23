@@ -19,7 +19,7 @@
 
 <script>
 import TASK_COLLECTION from "../../backend/mocks/tasksCollection";
-import MainPanel from "./MainPanel.vue";
+import MainPanel from "./MainPanel/MainPanel.vue";
 
 // `GET /tasks` endpoint on intial load
 const tasks = TASK_COLLECTION.tasks;

@@ -11,8 +11,8 @@
   </div>
 </template>
 <script>
-import OnBoarding from "./PageComponents/Onboarding.vue";
-import IdentityValidation from "./PageComponents/IdentityValidation.vue";
+import OnBoarding from "./components/Onboarding.vue";
+import IdentityValidation from "./components/IdentityValidation.vue";
 
 export default {
   name: "MainPanel",
