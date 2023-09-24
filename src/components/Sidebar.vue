@@ -115,4 +115,17 @@ input {
   padding: 0.5rem;
   border: 1px solid #003da0;
 }
+
+@media screen and (max-width: 540px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+}
 </style>

@@ -80,4 +80,19 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+@media screen and (max-width: 540px) {
+  .mainpanel {
+    position: relative;
+    left: 0;
+  }
+
+  form {
+    justify-content: center;
+
+    > div {
+      width: 100% !important;
+    }
+  }
+}
 </style>
