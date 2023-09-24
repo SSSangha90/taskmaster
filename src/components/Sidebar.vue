@@ -1,20 +1,24 @@
 <template>
-  <div class="sidebar">
-    <h1>Task List</h1>
-    <input v-model="search" type="text" />
-    <div class="menu">
-      <div
-        class="menu-option"
-        v-for="item in filteredTasks"
-        :key="item.id"
-        @click="selected(item.id)"
-      >
-        <h4>{{ item.name }}</h4>
-        <p>{{ item.subHeading }}</p>
+  <div class="wrapper">
+    <div class="sidebar">
+      <h1>Task List</h1>
+      <input v-model="search" type="text" />
+      <div class="menu">
+        <div
+          class="menu-option"
+          v-for="item in filteredTasks"
+          :key="item.id"
+          @click="selected(item.id)"
+        >
+          <div class="menu-details">
+            <h4>{{ item.name }}</h4>
+            <p>{{ item.subHeading }}</p>
+          </div>
+        </div>
       </div>
     </div>
+    <MainPanel :id="id" />
   </div>
-  <MainPanel :id="id" />
 </template>
 
 <script>
@@ -73,10 +77,24 @@ export default {
   border-bottom: 1px solid grey;
   margin: 0 1.5rem 0 0;
   cursor: pointer;
+  padding-bottom: 0.5rem;
 }
 
-.menu-option:hover {
-  background-color: rgba(144, 214, 232, 0.2);
+.menu-option:first-child {
+  padding-top: 0.5rem;
+}
+
+.menu-details:hover {
+  background-color: rgba(81, 160, 224, 0.2);
+  border-radius: 0.5rem;
+
+  > h4 {
+    color: #003da0;
+  }
+}
+
+.menu-details {
+  padding: 0.5rem;
 }
 
 h1 {
@@ -93,7 +111,8 @@ p {
 }
 
 input {
-  width: 90%;
+  width: 85%;
   padding: 0.5rem;
+  border: 1px solid #003da0;
 }
 </style>

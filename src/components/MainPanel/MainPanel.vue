@@ -50,22 +50,34 @@ p {
 }
 
 form {
-  border: 1px solid #000;
-  width: 50%;
+  border: 1px solid #003da0;
+  width: 100%;
   height: auto;
   margin: 0 auto;
+  background-color: rgba(81, 160, 224, 0.2);
+  color: #003da0;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 form > div {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   padding: 1rem;
+  width: 45%;
 }
 
 input {
-  padding: 0.5rem 1rem;
-  width: 16rem;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 0;
+  display: inline-block;
+  border: 1px solid #003da0;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 </style>
