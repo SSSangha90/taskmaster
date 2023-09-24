@@ -28,6 +28,17 @@ import MainPanel from "./MainPanel/MainPanel.vue";
 // `GET /tasks` endpoint on intial load
 const tasks = TASK_COLLECTION.tasks;
 
+function selected(id) {
+  // Get Task by ID
+  this.id = id;
+}
+
+function filteredTasks() {
+  return this.tasks.filter((task) => {
+    return task.name.toLowerCase().includes(this.search.toLowerCase());
+  });
+}
+
 export default {
   name: "SideBar",
   props: {},
@@ -39,17 +50,10 @@ export default {
     };
   },
   methods: {
-    // Get Task by ID
-    selected: function (id) {
-      this.id = id;
-    },
+    selected,
   },
   computed: {
-    filteredTasks() {
-      return this.tasks.filter((task) => {
-        return task.name.toLowerCase().includes(this.search.toLowerCase());
-      });
-    },
+    filteredTasks,
   },
   components: { MainPanel },
 };

@@ -1,7 +1,7 @@
 <template>
   <div class="onboarding">
     <div>
-      <h2>Onborading Introduction</h2>
+      <h2>Onboarding Introduction</h2>
       <p>
         In this onborading you are required to fill out each task and confirm
         that the information is correct.

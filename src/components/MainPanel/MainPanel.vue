@@ -25,9 +25,6 @@ export default {
   props: {
     id: Number,
   },
-  data() {},
-  methods: {},
-  computed: {},
   components: {
     OnBoarding,
     IdentityValidation,
