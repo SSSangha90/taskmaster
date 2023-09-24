@@ -14,26 +14,35 @@
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commodo consequat.
       </p>
-      <form>
+      <form @submit="checkForm">
         <div>
-          <Label>Address Line 1</Label>
-          <Input type="text" />
+          <label for="address1">Address Line 1</label>
+          <input type="text" name="address1" id="address1" v-model="address1" />
         </div>
         <div>
-          <Label>Address Line 2</Label>
-          <Input type="text" />
+          <label for="address2">Address Line 2</label>
+          <input type="text" name="address2" id="address2" v-model="address2" />
         </div>
         <div>
-          <Label>City</Label>
-          <Input type="text" />
+          <label for="city">City</label>
+          <input type="text" name="city" id="city" v-model="city" />
         </div>
         <div>
-          <Label>County</Label>
-          <Input type="text" />
+          <label for="county">County</label>
+          <input type="text" name="county" id="county" v-model="county" />
         </div>
         <div>
-          <Label>Proof of Address</Label>
-          <Input type="file" />
+          <label for="proof">Proof of Address</label>
+          <input type="file" name="proof" id="proof" />
+        </div>
+        <div>
+          <input type="submit" class="submit-btn" value="Submit" />
+        </div>
+        <div v-if="errors.length" class="error-list">
+          <b>Please correct the following:</b>
+          <ul>
+            <li v-for="error in errors" :key="error">{{ error }}</li>
+          </ul>
         </div>
       </form>
     </div>
@@ -43,5 +52,43 @@
 <script>
 export default {
   name: "AddressValidaton",
+  data() {
+    return {
+      errors: [],
+      address1: null,
+      address2: null,
+      city: null,
+      county: null,
+      proof: null,
+    };
+  },
+  methods: {
+    checkForm: function (e) {
+      this.errors = [];
+      if (
+        !this.address1 ||
+        this.address1.length < 3 ||
+        this.address1.length > 100
+      ) {
+        this.errors.push(
+          "Address Line 1 must be between 3 and 100 characters."
+        );
+      }
+
+      if (!this.city || this.city.length < 3 || this.city.length > 100) {
+        this.errors.push("City must be between 3 and 100 characters.");
+      }
+
+      if (!this.county || this.county.length < 3 || this.county.length > 100) {
+        this.errors.push("County must be between 3 and 100 characters.");
+      }
+
+      if (this.address1 && this.city && this.county) {
+        this.errors = [];
+        return true;
+      }
+      e.preventDefault();
+    },
+  },
 };
 </script>

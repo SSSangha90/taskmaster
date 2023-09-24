@@ -78,6 +78,22 @@ input {
   box-sizing: border-box;
 }
 
+.submit-btn {
+  background-color: #003da0;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.error-list {
+  display: block;
+  text-align: left;
+
+  > b {
+    padding-left: 1.5rem;
+  }
+}
+
 @media screen and (max-width: 540px) {
   .mainpanel {
     position: relative;
