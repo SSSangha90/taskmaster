@@ -57,6 +57,7 @@ form {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  border-radius: 0.5rem;
 }
 
 form > div {
