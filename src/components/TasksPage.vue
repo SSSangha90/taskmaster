@@ -40,7 +40,7 @@ function filteredTasks() {
 }
 
 export default {
-  name: "SideBar",
+  name: "TasksPage",
   props: {},
   data() {
     return {
@@ -74,12 +74,11 @@ export default {
   flex-direction: column;
   gap: 0.5rem;
   text-align: left;
-  margin-left: 2rem;
+  width: 100%;
 }
 
 .menu-option {
   border-bottom: 1px solid grey;
-  margin: 0 1.5rem 0 0;
   cursor: pointer;
   padding-bottom: 0.5rem;
 }
@@ -99,6 +98,7 @@ export default {
 
 .menu-details {
   padding: 0.5rem;
+  margin: 0 1rem;
 }
 
 h1 {
@@ -130,6 +130,7 @@ input {
     position: relative;
     width: 100%;
     height: auto;
+    border-right: none;
   }
 }
 </style>
